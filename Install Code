@@ -13,8 +13,8 @@ cd ~/Projects/b50.git
 make
 make install
 
-sudo cp -R ~/Projects/b50.git/kexts/AppleBacklightInjector.kext
-sudo cp -R ~/Projects/b50.git/kexts/AppleALC.kext
+sudo cp -R ~/Projects/b50.git/kexts/AppleBacklightInjector.kext /Library/Extensions
+sudo cp -R ~/Projects/b50.git/kexts/AppleALC.kext /Library/Extensions
 
 
 cd ~/Projects/b50.git
