@@ -1,0 +1,36 @@
+git
+
+mkdir ~/Projects
+cd ~/Projects
+git clone https://github.com/ibrahimdoqn/Lenovo-B50-master.git b50.git
+
+cd ~/Projects/b50.git
+./download.sh
+
+./install_downloads.sh elan
+
+cd ~/Projects/b50.git
+make
+make install
+
+sudo cp -R ~/Projects/b50.git/kexts/AppleBacklightInjector.kext
+sudo cp -R ~/Projects/b50.git/kexts/AppleALC.kext
+
+
+cd ~/Projects/b50.git
+curl -o ./ssdtPRGen.sh https://raw.githubusercontent.com/Piker-Alpha/ssdtPRGen.sh/master/ssdtPRGen.sh
+chmod +x ./ssdtPRGen.sh
+./ssdtPRGen.sh
+
+cd ~/Projects/b50.git
+sudo ./mount_efi.sh /
+cp ~/Library/ssdtPRgen/ssdt.aml /Volumes/EFI/EFI/Clover/ACPI/patched/SSDT.aml
+
+sudo pmset -a hibernatemode 0
+sudo rm /var/vm/sleepimage
+sudo mkdir /var/vm/sleepimage
+
+cd ~/Projects/b50.git
+cp config.plist /Volumes/EFI/EFI/Clover/config.plist
+
+sudo touch /System/Library/Extensions && sudo kextcache -u /
