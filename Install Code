@@ -2,7 +2,7 @@ git
 
 mkdir ~/Projects
 cd ~/Projects
-git clone https://github.com/ibrahimdoqn/Lenovo-B50-master.git b50.git
+git clone https://github.com/ibrahimdoqn/Lenovo-B50.git b50.git
 
 cd ~/Projects/b50.git
 ./download.sh
@@ -25,6 +25,9 @@ chmod +x ./ssdtPRGen.sh
 cd ~/Projects/b50.git
 sudo ./mount_efi.sh /
 cp ~/Library/ssdtPRgen/ssdt.aml /Volumes/EFI/EFI/Clover/ACPI/patched/SSDT.aml
+
+cd ~/Projects/b50.git
+./patch_edid.sh
 
 sudo pmset -a hibernatemode 0
 sudo rm /var/vm/sleepimage
