@@ -283,17 +283,15 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>darkwake=1</string>
+		<string>darkwake=1 dart=0</string>
 		<key>Debug</key>
 		<false/>
-		<key>DefaultVolume</key>
-		<string>Wantto</string>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>0</integer>
+		<integer>5</integer>
 		<key>XMPDetection</key>
 		<false/>
 	</dict>
